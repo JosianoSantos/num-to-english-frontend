@@ -1,33 +1,50 @@
-# num-to-english
+# Number to English API
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Django REST API that converts numbers into English words.
 
-## Recommended IDE Setup
+## Installation
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Running Manually
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Backend:
 
-## Customize configuration
+1. Create a virtual environment and install dependencies:
+   ```bash
+   cd backend
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+2. Run the server:
+   ```bash
+   python manage.py runserver
+   ```
+### Frontend:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Install dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Project Setup
+### Running with Docker
 
-```sh
-npm install
-```
+1. Build and start the container:
+   ```bash
+   docker-compose up --build
+   ```
+2. The API will be available at `http://localhost:8000` and the frontend at `http://localhost:8080`.
 
-### Compile and Hot-Reload for Development
+### API Endpoints
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+- **GET /converter/num_to_english?number=12345**
+  ```json
+  { "number": 12345 }
+  ```
+- API Documentation:
+  - Swagger: `/`
